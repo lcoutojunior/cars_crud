@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "9beba0a5-1ccf-4f9c-b0da-4056e9f97f9c",
+		"name": "Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/healthcheck",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cars/:uuid",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars",
+						":uuid"
+					],
+					"variable": [
+						{
+							"key": "uuid",
+							"value": "576b3052-9b68-41b0-a132-bac755def84e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cars",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brand\": \"MAZDA\",\n    \"year\": 2020,\n    \"model\": \"Hatch\", \n    \"version\": \"1.0 flex\",\n    \"kilometers\": 0,\n    \"transmissionType\": \"CVT\",\n    \"sellingPrice\": 50000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cars",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Cars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"year\": {\"$gte\": 2020, \"$lte\": 2021}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cars/search",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cars/:uuid",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars",
+						":uuid"
+					],
+					"variable": [
+						{
+							"key": "uuid",
+							"value": "b086fdd4-81ab-467a-af91-535fe468de56"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Car",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brand\": \"BMW\",\n    \"sellingPrice\": 200000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cars/:uuid",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cars",
+						":uuid"
+					],
+					"variable": [
+						{
+							"key": "uuid",
+							"value": "576b3052-9b68-41b0-a132-bac755def84e"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
